@@ -19,8 +19,11 @@ streamlit.dataframe(fruits_to_show)
 
 #New section to display fruityvise api response
 streamlit.header('Fruityvise Fruit Adivce!')
+fruit_choice = streamlit.text_input('What Fruit would you like information about?','Kiwi')
+streamlit.write('The user entered', fruit_choice)
+
 import requests
-fruityvise_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi")
+fruityvise_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
 
 #Convert JSON response to normalized
 fruityvise_normalized = pandas.json_normalize(fruityvise_response.json())
