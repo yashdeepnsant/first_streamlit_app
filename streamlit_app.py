@@ -26,7 +26,7 @@ def get_fruityvice_data(this_fruit_choice):
     fruityvise_response = requests.get("https://fruityvice.com/api/fruit/" + this_fruit_choice)
     #Convert JSON response to normalized
     fruityvise_normalized = pandas.json_normalize(fruityvise_response.json())
-    retrun fruityvise_normalized
+    return fruityvise_normalized
 
 #New section to display fruityvise api response
 streamlit.header('Fruityvise Fruit Adivce!')
